@@ -244,15 +244,28 @@
 # foo()
 # print("global x:", x)
 
-def outer():
-    x = "local"
+# def outer():
+#     x = "local"
 
-    def inner():
-        nonlocal x
-        x = "nonlocal"
-        print("inner:", x)
+#     def inner():
+#         nonlocal x
+#         x = "nonlocal"
+#         print("inner:", x)
 
-    inner()
-    print("outer:", x)
+#     inner()
+#     print("outer:", x)
 
-outer()
+# outer()
+
+class Teacher:
+    def __init__(self, name, salary):
+        self.name = name
+        self.__salary = salary
+    def disp(self):
+        print(self.name)
+        print(self.__salary)
+teacher = Teacher('Suzan', 500000)
+teacher.disp()
+print(teacher.name)
+print(teacher.__salary)# error-object has no
+#attribute
