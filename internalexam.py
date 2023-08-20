@@ -257,15 +257,33 @@
 
 # outer()
 
-class Teacher:
-    def __init__(self, name, salary):
-        self.name = name
-        self.__salary = salary
-    def disp(self):
-        print(self.name)
-        print(self.__salary)
-teacher = Teacher('Suzan', 500000)
-teacher.disp()
-print(teacher.name)
-print(teacher.__salary)# error-object has no
-#attribute
+# class Teacher:
+#     def __init__(self, name, salary):
+#         self.name = name
+#         self.__salary = salary
+#     def disp(self):
+#         print(self.name)
+#         print(self.__salary)
+# teacher = Teacher('Suzan', 500000)
+# teacher.disp()
+# print(teacher.name)
+# print(teacher.__salary)# error-object has no
+# #attribute
+
+class Person:
+    def __init__(self, fname, lname):
+        self.firstname = fname
+        self.lastname = lname
+
+def printname(self):
+
+    print(self.fname, self.lname)
+
+class Student(Person):
+    def __init__(self, fname, lname):
+        self.fname = fname
+        self.lname = lname
+        print("Hi",self.fname)
+
+x = Student("John", "Doe")
+x.printname()
