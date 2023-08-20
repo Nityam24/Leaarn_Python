@@ -140,18 +140,119 @@
 # print(dict1)
 # print(dict2)
 
-myfamily = {
-"child1" : {
-"name" : "Emil",
-"year" : 2004
-},
-"child2" : {
-"name" : "Tobias",
-"year" : 2007
-},
-"child3" : {
-"name" : "Linus",
-"year" : 2011
-}
-}
-print(myfamily["child1"]["name"])
+# myfamily = {
+# "child1" : {
+# "name" : "Emil",
+# "year" : 2004
+# },
+# "child2" : {
+# "name" : "Tobias",
+# "year" : 2007
+# },
+# "child3" : {
+# "name" : "Linus",
+# "year" : 2011
+# }
+# }
+# print(myfamily["child1"]["name"])
+
+# # vowels keys
+# keys = {'a', 'e', 'i', 'o', 'u' }
+
+# vowels = dict.fromkeys(keys)
+# print(vowels)
+
+# value = 'vowel'
+# vowels = dict.fromkeys(keys, value)
+# print(vowels)
+
+# # vowels keys
+# keys = {'a', 'e', 'i', 'o', 'u' }
+# value = [1]
+
+# vowels = dict.fromkeys(keys, value)
+# print(vowels)
+
+# # updating the value
+# value.append(2)
+# print(vowels)
+
+# #with List comprehension
+# fruits = ["apple", "banana", "cherry", "kiwi", "mango"]
+# newlist = [x for x in fruits if "a" in x]
+# print(newlist)
+
+
+#FUNCTION-------
+
+# def greet(name):
+
+#     """
+
+#     This function greets to
+#     the person passed in as
+#     a parameter
+#     """
+
+#     print("Hello, " + name + ". Good morning!")
+
+# greet('Jitiksha')
+
+# print(greet.__doc__)
+
+# c = 1 # global variable
+# def add():
+#     c = c + 2 # increment c by 2
+#     print(c)
+
+# add()
+
+# c = 0 # global variable
+# def add():
+#     global c
+#     c = c + 2 # increment by 2
+#     print("Inside add():", c)
+# add()
+# print("In main:", c)
+
+# def foo():
+#     y = "local"
+# foo()
+# print(y)
+#-------------------------------------------
+# def foo():
+#     y = "local"
+#     print(y)
+# foo()
+
+
+# x = "global "
+
+# def foo():
+#     global x
+#     y = "local"
+#     x = x * 2
+#     print(x)
+#     print(y)
+
+# foo()
+
+# x = 5
+# def foo():
+#     x = 10
+#     print("local x:", x)
+# foo()
+# print("global x:", x)
+
+def outer():
+    x = "local"
+
+    def inner():
+        nonlocal x
+        x = "nonlocal"
+        print("inner:", x)
+
+    inner()
+    print("outer:", x)
+
+outer()
