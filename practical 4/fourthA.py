@@ -11,3 +11,4 @@ print(Remove(duplicate))
 
 
 #convert one datatype to all other datatypes
+# pyhon code for convert list to set

@@ -1,3 +1,5 @@
+#b) Write a program to find frequency of elements of list.
+
 random_list = ['A', 'A', 'B', 'C', 'B', 'D', 'D', 'A', 'B']
 frequency = {}
 for item in random_list:
@@ -11,3 +13,4 @@ for item in random_list:
 
 
 print(frequency)
+
