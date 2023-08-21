@@ -270,20 +270,71 @@
 # print(teacher.__salary)# error-object has no
 # #attribute
 
-class Person:
-    def __init__(self, fname, lname):
-        self.firstname = fname
-        self.lastname = lname
+# class Person:
+#     def __init__(self, fname, lname):
+#         self.firstname = fname
+#         self.lastname = lname
 
-def printname(self):
+# def printname(self):
 
-    print(self.fname, self.lname)
+#     print(self.fname, self.lname)
 
-class Student(Person):
-    def __init__(self, fname, lname):
-        self.fname = fname
-        self.lname = lname
-        print("Hi",self.fname)
+# class Student(Person):
+#     def __init__(self, fname, lname):
+#         self.fname = fname
+#         self.lname = lname
+#         print("Hi",self.fname)
 
-x = Student("John", "Doe")
-x.printname()
+# x = Student("John", "Doe")
+# x.printname()
+
+# def calculate_discounted_price(original_price, discount_percentage):
+#     discount_amount = (discount_percentage / 100) * original_price
+#     discounted_price = original_price - discount_amount
+
+#     # Assert that the discount amount is greater than or equal to 0
+#     assert discount_amount >= 0, "Discount amount cannot be negative."
+
+#     # Assert that the discount amount is less than or equal to the original price
+#     assert discount_amount <= original_price, "Discount amount cannot be greater than the original price."
+
+#     return discounted_price
+
+# try:
+#     original_price = float(input("Enter the original price of the product: "))
+#     discount_percentage = float(input("Enter the percentage discount: "))
+
+#     discounted_price = calculate_discounted_price(original_price, discount_percentage)
+#     print(f"The discounted price of the product is: {discounted_price:.2f}")
+
+# except ValueError:
+#     print("Invalid input. Please enter valid numbers.")
+# except AssertionError as e:
+#     print(e)
+
+class VectorDivisionError(Exception):
+    pass
+
+def vector_division(vector1, vector2):
+    result = []
+    for i in range(len(vector1)):
+        try:
+            if vector2[i] == 0:
+                raise VectorDivisionError("Division by zero is not allowed.")
+            result.append(vector1[i] / vector2[i])
+        except IndexError:
+            raise VectorDivisionError("Vectors must have the same length.")
+    
+    return result
+
+try:
+    vector1 = [float(x) for x in input("Enter the elements of the first vector, separated by spaces: ").split()]
+    vector2 = [float(x) for x in input("Enter the elements of the second vector, separated by spaces: ").split()]
+
+    result_vector = vector_division(vector1, vector2)
+    print("Result vector:", result_vector)
+
+except ValueError:
+    print("Invalid input. Please enter valid numbers.")
+except VectorDivisionError as e:
+    print(e)
