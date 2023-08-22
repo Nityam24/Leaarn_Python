@@ -312,29 +312,53 @@
 # except AssertionError as e:
 #     print(e)
 
-class VectorDivisionError(Exception):
+# class VectorDivisionError(Exception):
+#     pass
+
+# def vector_division(vector1, vector2):
+#     result = []
+#     for i in range(len(vector1)):
+#         try:
+#             if vector2[i] == 0:
+#                 raise VectorDivisionError("Division by zero is not allowed.")
+#             result.append(vector1[i] / vector2[i])
+#         except IndexError:
+#             raise VectorDivisionError("Vectors must have the same length.")
+    
+#     return result
+
+# try:
+#     vector1 = [float(x) for x in input("Enter the elements of the first vector, separated by spaces: ").split()]
+#     vector2 = [float(x) for x in input("Enter the elements of the second vector, separated by spaces: ").split()]
+
+#     result_vector = vector_division(vector1, vector2)
+#     print("Result vector:", result_vector)
+
+# except ValueError:
+#     print("Invalid input. Please enter valid numbers.")
+# except VectorDivisionError as e:
+#     print(e)
+
+class Person:
+    def __init__(self, fname, lname):
+        self.firstname = fname
+        self.lastname = lname
+
+    def printname(self):
+
+        print(self.firstname, self.lastname)
+
+#Use the Person class to create an object, and then execute the printname
+
+
+x = Person("Jitiksha", "Patel")
+x.printname()
+
+class Student(Person):
     pass
 
-def vector_division(vector1, vector2):
-    result = []
-    for i in range(len(vector1)):
-        try:
-            if vector2[i] == 0:
-                raise VectorDivisionError("Division by zero is not allowed.")
-            result.append(vector1[i] / vector2[i])
-        except IndexError:
-            raise VectorDivisionError("Vectors must have the same length.")
-    
-    return result
+#Use the Student class to create an object, and then execute the printname
 
-try:
-    vector1 = [float(x) for x in input("Enter the elements of the first vector, separated by spaces: ").split()]
-    vector2 = [float(x) for x in input("Enter the elements of the second vector, separated by spaces: ").split()]
 
-    result_vector = vector_division(vector1, vector2)
-    print("Result vector:", result_vector)
-
-except ValueError:
-    print("Invalid input. Please enter valid numbers.")
-except VectorDivisionError as e:
-    print(e)
+x = Student("John", "Doe")
+x.printname()
