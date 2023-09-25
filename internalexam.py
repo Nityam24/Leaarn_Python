@@ -351,7 +351,7 @@ class Person:
 #Use the Person class to create an object, and then execute the printname
 
 
-x = Person("Jitiksha", "Patel")
+x = Person("Nityam", "Patel")
 x.printname()
 
 class Student(Person):
